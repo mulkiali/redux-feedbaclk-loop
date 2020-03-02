@@ -17,6 +17,7 @@ class Understanding extends Component {
         this.setState({
             understanding: Number(event.target.value)
         })
+       
     }
 
     render() {

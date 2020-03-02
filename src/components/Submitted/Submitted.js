@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 class Review extends Component {
   handleClick = () => {
     this.props.dispatch({type: 'RESET_SURVEY'});
-        this.props.history.push('/feeling');
+        this.props.history.push('/');
     }
   
  

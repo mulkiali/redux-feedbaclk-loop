@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Axios from 'axios';
+// import {withRouter} from 'react-router-dom'
 
 class Review extends Component {
     FeedbackSubmit = () =>{
@@ -9,7 +10,7 @@ class Review extends Component {
             url: '/feedback',
             data: this.props.reduxState.feedbackReducer,  
         }).then((response)=>{
-            // this.props.dispatch(action)
+            console.log(response);
         }).catch((error)=>{
             console.log('error submitting', error);
         })
@@ -17,7 +18,7 @@ class Review extends Component {
 
     handleSubmit = () => {
         this.props.history.push('/submitted');
-
+        this.FeedbackSubmit()
     }
 
     render() {
