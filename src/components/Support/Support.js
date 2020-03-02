@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 class Support extends Component {
     handleClick = ()=> {
@@ -16,4 +17,4 @@ class Support extends Component {
     }
   }
   
-  export default Support;
+  export default connect()(Support);

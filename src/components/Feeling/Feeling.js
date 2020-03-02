@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 class Feeling extends Component {
+    state={
+        feeling: '',
+    }
     handleClick = ()=> {
+        this.props.dispatch({
+            type: 'SET_FEELINGS',
+            payload: this.state.feeling
+        })
         this.props.history.push('/understanding')
+    }
+
+    handleChange = (event) =>{
+        this.setState({
+            feeling: Number(event.target.value)
+        })
     }
 
     render() {
       return (
         <div className="Feeling">
         <h1>How are you feeling today?</h1>
-        <select id="feeling" name="feeling">
+        <select value={this.state.feeling} name="feeling" onChange={this.handleChange}>
             <option value="1"> 1 - Low</option>
             <option value="2"> 2 - Not Great</option>
             <option value="3"> 3 - Fine</option>
@@ -22,4 +36,4 @@ class Feeling extends Component {
     }
   }
   
-  export default Feeling;
+  export default connect()(Feeling);
