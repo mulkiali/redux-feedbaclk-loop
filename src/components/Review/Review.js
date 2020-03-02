@@ -10,13 +10,13 @@ class Review extends Component {
             data: this.props.reduxState.feedbackReducer,  
         }).then((response)=>{
             // this.props.dispatch(action)
-           this.props.history.push('/submitted')
         }).catch((error)=>{
             console.log('error submitting', error);
         })
     }
 
     handleSubmit = () => {
+        this.props.history.push('/submitted');
 
     }
 
@@ -31,6 +31,7 @@ class Review extends Component {
             <p>Undesrtanding: {feedback.understanding}</p>
             <p>Support: {feedback.support}</p>
             <p>Comments: {feedback.comments}</p>
+            <button onClick={this.handleSubmit}>Submit</button>
            
 
         </div>
