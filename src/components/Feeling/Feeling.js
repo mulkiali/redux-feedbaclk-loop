@@ -7,7 +7,7 @@ class Feeling extends Component {
     }
     handleClick = ()=> {
         this.props.dispatch({
-            type: 'UPDATE_FEELINGS',
+            type: 'UPDATE_FEELING',
             payload: this.state.feeling
         })
         this.props.history.push('/understanding')

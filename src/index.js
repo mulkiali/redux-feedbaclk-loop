@@ -15,13 +15,13 @@ const defaultState = {
  }
 
 const feedbackReducer = (state = defaultState, action)=>{
-  if (action.payload === 'UPDATE_FEELING'){
+  if (action.type === 'UPDATE_FEELING'){
     return {...state, feeling: action.payload};
-  }else if(action.payload === 'UPDATE_UNDERSTANDING'){
+  }else if(action.type === 'UPDATE_UDERSTANDING'){
     return {...state, understanding: action.payload};
-  }else if(action.payload === 'UPDATE_SUPPORT'){
+  }else if(action.type === 'UPDATE_SUPPORT'){
     return {...state, support: action.payload};
-  }else if(action.payload === 'UPDATE_COMMENTS'){
+  }else if(action.type === 'UPDATE_COMMENTS'){
     return {...state, comments: action.payload};
   }else if ("RESET_SURVEY"){
         return defaultState
